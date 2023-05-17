@@ -1,0 +1,6 @@
+fastapi[all]
+humps
+numpy
+pytest
+pytest-mock
+sqlalchemy~=2.0
