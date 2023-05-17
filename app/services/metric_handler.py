@@ -30,7 +30,7 @@ class MetricHandlerService:
                 sum(response_time_list) / len(response_time_list))
             values['min'] = min(response_time_list)
             values['max'] = max(response_time_list)
-            values['p99'] = round(numpy.percentile(response_time_list, 37))
+            values['p99'] = round(numpy.percentile(response_time_list, 99))
 
             result.append(MetricReadBase(**values))
 
