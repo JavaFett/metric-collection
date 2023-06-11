@@ -1,15 +1,16 @@
-import os
-
 from pydantic import BaseSettings
 
 
 class Settings(BaseSettings):
-    DATABASE_URL = os.environ.get('DATABASE_URL')
-    DEBUG = os.environ.get('DEBUG')
+    DATABASE_URL: str = ''
+    DEBUG: bool = True
 
-    SERVER_HOST = "0.0.0.0"
-    SERVER_PORT = 4000
-    SERVER_RELOAD = True
+    SERVER_HOST: str = "0.0.0.0"
+    SERVER_PORT: int = 4000
+    SERVER_RELOAD: bool = True
+    
+    class Config:
+        env_file = ".env"
 
 
 settings = Settings()
