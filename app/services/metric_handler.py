@@ -13,7 +13,6 @@ class MetricHandlerService:
     def __init__(self, repository: MetricRepository) -> None:
         self.repository = repository
 
-    @lru_cache
     async def process_metrics(self, service_name: str) -> List[MetricReadBase]:
         metrics = await self.repository.get_metrics_by_service_name(service_name)
         result = []
