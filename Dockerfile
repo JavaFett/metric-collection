@@ -8,8 +8,6 @@ RUN pip install --upgrade pip && pip install --no-cache-dir -r /var/www/metric-c
 
 WORKDIR /var/www/metric-collection-service/app/
 
-RUN export `cat .env`
-
 EXPOSE 80
 
 CMD ["python", "./main.py"]
